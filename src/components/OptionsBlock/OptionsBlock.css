@@ -1,0 +1,60 @@
+.option-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 40px 18px 30px 18px;
+  border: 1px solid rgb(181, 206, 218);
+  width: 150px;
+  border-radius: 10px;
+  transition: 0.33s;
+}
+
+.option-card:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+  transition: 0.33s;
+}
+
+.option-card:active {
+  transform: scale(0.96, 0.96);
+  transition: 0.33s;
+}
+
+.cards-container {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.choosen {
+  background-color: aliceblue;
+  border-color: rgba(0, 0, 139, 0.438);
+}
+
+.option-card-img {
+  margin-bottom: 1em;
+}
+
+.period-option-container {
+  margin: 3em auto 0;
+  background-color: aliceblue;
+  width: 80%;
+  padding: 14px 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.choosen-period {
+  transition: 0.33s;
+  color: rgb(15, 15, 189);
+  font-weight: 700;
+}

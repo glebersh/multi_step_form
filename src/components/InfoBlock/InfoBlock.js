@@ -43,7 +43,11 @@ const InfoBlock = () => {
           value={phoneInputValue}
           required></input>
       </form >
-      <PageControls currentPage={currentPage} complete={isComplete} />
+      <PageControls
+        changePage={setCurrentPage}
+        currentPage={currentPage}
+        complete={isComplete}
+        path='/options' />
     </>
   )
 };

@@ -32,16 +32,6 @@
   transition: 0.28s ease-in-out;
 }
 
-.navigation__item__page-number:hover {
-  cursor: pointer;
-  transition: 0.28s ease-in-out;
-}
-
-.navigation__item__page-number:active {
-  transform: scale(0.96, 0.96);
-  transition: 0.28s ease-in-out;
-}
-
 .active {
   background-color: rgb(122, 164, 255);
   color: white;

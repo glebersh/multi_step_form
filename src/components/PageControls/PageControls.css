@@ -1,6 +1,14 @@
 .previous-page-btn {
   display: inline-block;
   color: rgb(126, 126, 126);
+  transition: 0.33s;
+
+}
+
+.previous-page-btn:hover {
+  color: black;
+  cursor: pointer;
+  transition: 0.33s;
 }
 
 .next-page-btn {
