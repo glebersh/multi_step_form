@@ -1,0 +1,30 @@
+.previous-page-btn {
+  display: inline-block;
+  color: rgb(126, 126, 126);
+}
+
+.next-page-btn {
+  display: inline-block;
+  border-radius: 6px;
+  background-color: darkblue;
+  color: white;
+  padding: 10px 20px;
+  margin-left: auto;
+}
+
+.buttons-container {
+
+  margin-top: 100px;
+
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}

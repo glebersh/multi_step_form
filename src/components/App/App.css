@@ -1,0 +1,23 @@
+html {
+  background-color: rgb(234, 237, 239);
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  color: black;
+  background-color: #ecf8ff;
+}
+
+.app {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 50%;
+  background-color: white;
+  padding: 25px 25px 0px;
+  border-radius: 10px;
+}
