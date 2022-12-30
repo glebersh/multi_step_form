@@ -12,13 +12,18 @@ const PageControls = ({ changePage, currentPage, complete, path }) => {
 
   return (
     <div className='buttons-container'>
-      {currentPage != 1 ?
+      {
+        currentPage !== 1 &&
         <div className='previous-page-btn' onClick={() => navigateBack()}>
           Go Back
-        </div> : null}
-      <div className={complete ? 'next-page-btn' : 'next-page-btn disabled'}>
-        <Link to={path} onClick={() => changePage(currentPage + 1)}> Next Step</Link>
-      </div>
+        </div>
+      }
+      {
+        currentPage !== 4 &&
+        <div className={complete ? 'next-page-btn' : 'next-page-btn disabled'}>
+          <Link to={path} onClick={() => changePage(currentPage + 1)}>Next Step</Link>
+        </div>
+      }
     </div >
   )
 };

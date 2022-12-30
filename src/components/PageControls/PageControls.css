@@ -2,7 +2,6 @@
   display: inline-block;
   color: rgb(126, 126, 126);
   transition: 0.33s;
-
 }
 
 .previous-page-btn:hover {
@@ -21,8 +20,7 @@
 }
 
 .buttons-container {
-
-  margin-top: 100px;
+  margin-top: 4em;
 
   width: 90%;
   display: flex;

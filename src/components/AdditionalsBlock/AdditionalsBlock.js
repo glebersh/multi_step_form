@@ -5,7 +5,7 @@ import BlockHeader from '../BlockHeader/BlockHeader';
 import PageControls from '../PageControls/PageControls';
 import './AdditionalsBlock.css';
 
-const AdditionalsBlock = () => {
+const AdditionalsBlock = ({ addAdditional }) => {
   const [currentPage, setCurrentPage] = useOutletContext();
   const description = 'Add-ons helps enhance your gaming experience.';
 
@@ -14,7 +14,7 @@ const AdditionalsBlock = () => {
       <BlockHeader title='Pick add-ons' description={description} />
       <div className='additionals-container'>
         <div className='additionals-card'>
-          <Checkbox borderColor='darkblue' />
+          <Checkbox borderColor='darkblue' onChange={() => addAdditional({ title: 'Online service', price: 1 })} />
           <div>
             <span>Online service</span>
             <span>Access to multiplayer games</span>
@@ -22,7 +22,7 @@ const AdditionalsBlock = () => {
           <span>+$1/mo</span>
         </div>
         <div className='additionals-card'>
-          <Checkbox borderColor='darkblue' />
+          <Checkbox borderColor='darkblue' onChange={() => addAdditional({ title: 'Larger storage', price: 1 })} />
           <div>
             <span>Larger storage</span>
             <span>Extra 1TB of cloud save</span>
@@ -30,7 +30,7 @@ const AdditionalsBlock = () => {
           <span>+$2/mo</span>
         </div>
         <div className='additionals-card'>
-          <Checkbox borderColor='darkblue' />
+          <Checkbox borderColor='darkblue' onChange={() => addAdditional({ title: 'Customize profile', price: 2 })} />
           <div>
             <span>Customize profile</span>
             <span>Custom theme on your profile</span>
@@ -39,9 +39,10 @@ const AdditionalsBlock = () => {
         </div>
       </div>
       <PageControls
+        complete={true}
         changePage={setCurrentPage}
         currentPage={currentPage}
-        path='/options' />
+        path='/summary' />
     </>
   )
 };

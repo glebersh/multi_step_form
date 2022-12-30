@@ -21,3 +21,15 @@
 .info-form label {
   margin-top: 1em;
 }
+
+input[type='submit'] {
+  margin-top: 1em;
+  display: inline-block;
+  text-align: center;
+  border: none;
+}
+
+input[type='submit']:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

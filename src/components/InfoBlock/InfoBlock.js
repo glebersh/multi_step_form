@@ -5,7 +5,7 @@ import PageControls from '../PageControls/PageControls';
 import './InfoBlock.css';
 
 
-const InfoBlock = () => {
+const InfoBlock = ({ setUser }) => {
   const [currentPage, setCurrentPage] = useOutletContext();
   const description = 'Please provide your personal name, email address, and phone number.';
   const [isComplete, setComplete] = useState(false);
@@ -21,12 +21,17 @@ const InfoBlock = () => {
     else {
       setComplete(false);
     }
-  }, [nameInputValue, emailInputValue, phoneInputValue])
+  }, [nameInputValue, emailInputValue, phoneInputValue]);
+
+  const saveInfo = (e) => {
+    e.preventDefault();
+    setUser({ name: nameInputValue, email: emailInputValue, phone: phoneInputValue });
+  };
 
   return (
     <>
       <BlockHeader title='Personal info' description={description} />
-      <form className='info-form'>
+      <form className='info-form' onSubmit={(e) => saveInfo(e)}>
         <label htmlFor='name-input'>Name</label>
         <input type='text' id='name-input'
           onChange={(e) => setNameInputValue(e.target.value)}
@@ -42,6 +47,7 @@ const InfoBlock = () => {
           onChange={(e) => setPhoneInputValue(e.target.value)}
           value={phoneInputValue}
           required></input>
+        <input type='submit' value='Save info' />
       </form >
       <PageControls
         changePage={setCurrentPage}
