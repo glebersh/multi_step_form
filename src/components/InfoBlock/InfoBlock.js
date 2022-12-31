@@ -3,19 +3,21 @@ import { useOutletContext } from 'react-router-dom';
 import BlockHeader from '../BlockHeader/BlockHeader';
 import PageControls from '../PageControls/PageControls';
 import './InfoBlock.css';
+import { Alert, AlertIcon } from '@chakra-ui/react';
 
 
 const InfoBlock = ({ setUser }) => {
   const [currentPage, setCurrentPage] = useOutletContext();
   const description = 'Please provide your personal name, email address, and phone number.';
   const [isComplete, setComplete] = useState(false);
+  const [alertVisible, setAlert] = useState(false);
 
   const [nameInputValue, setNameInputValue] = useState('');
   const [emailInputValue, setEmailInputValue] = useState('');
   const [phoneInputValue, setPhoneInputValue] = useState('');
 
   useEffect(() => {
-    if (nameInputValue !== "" && emailInputValue !== "" && phoneInputValue !== "") {
+    if (nameInputValue && emailInputValue && phoneInputValue) {
       setComplete(true);
     }
     else {
@@ -26,11 +28,19 @@ const InfoBlock = ({ setUser }) => {
   const saveInfo = (e) => {
     e.preventDefault();
     setUser({ name: nameInputValue, email: emailInputValue, phone: phoneInputValue });
+    setAlert(true);
   };
 
   return (
     <>
-      <BlockHeader title='Personal info' description={description} />
+      {
+        alertVisible ?
+          <Alert status='success'>
+            <AlertIcon />
+            Info added!
+          </Alert> :
+          <BlockHeader title='Personal info' description={description} />
+      }
       <form className='info-form' onSubmit={(e) => saveInfo(e)}>
         <label htmlFor='name-input'>Name</label>
         <input type='text' id='name-input'

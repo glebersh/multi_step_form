@@ -4,4 +4,25 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  background-color: aliceblue;
+  padding: 20px 40px;
+  margin-top: 1em;
+  border-radius: 10px;
+}
+
+.additional-description {
+  flex: 1;
+  margin-left: 3em;
+  display: flex;
+  flex-direction: column;
+}
+
+.additional-description>span:first-of-type {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.additional-description+span {
+  color: darkblue;
+  font-weight: 700;
 }

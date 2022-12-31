@@ -11,7 +11,7 @@ export const FormContext = React.createContext();
 
 const App = () => {
   const [choosedPlan, setChoosedPlan] = useState('');
-  const [choosedPeriod, setChoosedPeriod] = useState('monthly');
+  const [choosedPeriod, setChoosedPeriod] = useState('Monthly');
   const [additionals, setAdditionals] = useState([]);
   const [userInfo, setUser] = useState({});
 

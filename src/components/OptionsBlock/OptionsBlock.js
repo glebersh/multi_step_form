@@ -27,7 +27,7 @@ const OptionsBlock = ({ choosedPlan, setChoosedPlan, choosedPeriod, setChoosedPe
           <img src='./images/icon-arcade.svg'
             className='option-card-img' />
           <span>Arcade</span>
-          <span>{choosedPeriod === 'monthly' ? '$9/mo' : '$108/year'}</span>
+          <span>{choosedPeriod === 'Monthly' ? '$9/mo' : '$108/year'}</span>
         </div>
         <div className={choosedPlan === 'Advanced' ? `${baseClass} + choosen` : baseClass}
           onClick={() => setChoosedPlan('Advanced')}>
@@ -52,7 +52,7 @@ const OptionsBlock = ({ choosedPlan, setChoosedPlan, choosedPeriod, setChoosedPe
       <PageControls
         changePage={setCurrentPage}
         currentPage={currentPage}
-        complete={choosedPlan !== '' ? true : false}
+        complete={!!choosedPlan}
         path='/additionals' />
     </>
   )
